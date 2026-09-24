@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mask Dataset Audit</title><style>
+body{font:16px/1.6 system-ui,sans-serif;color:#203047;background:#f4f7fb;margin:0}
+main{max-width:1120px;margin:auto;padding:40px 24px}h1{font-size:36px;margin-bottom:0}
+.muted{color:#53657c}.cards{display:flex;flex-wrap:wrap;gap:14px;margin:28px 0}
+.card{background:white;border:1px solid #dbe4ef;border-radius:12px;padding:18px;flex:1;min-width:120px}
+.card strong{display:block;font-size:32px;color:#155a94}.card span{display:block;font-size:14px}
+section{background:white;border:1px solid #dbe4ef;border-radius:12px;padding:24px;margin-top:22px}
+.scroll{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;padding:12px;border-bottom:1px solid #e3eaf2;vertical-align:top;overflow-wrap:anywhere}
+th{background:#f4f7fb}.barrow{display:grid;grid-template-columns:80px 1fr 150px;gap:12px;align-items:center;margin:12px 0}
+.track{height:16px;background:#edf2f7;border-radius:8px;overflow:hidden}.bar{height:100%;background:#277cb7}
+@media(max-width:600px){main{padding:20px 12px}.barrow{grid-template-columns:60px 1fr}.barrow>span:last-child{grid-column:2}}
+</style></head><body><main><p class="muted">LOCAL · READ-ONLY · NO GPU</p><h1>Mask Dataset Audit</h1>
+<p class="muted">Check segmentation data before spending time on training.</p><div class="cards"><div class="card"><strong>8</strong><span>masks read</span></div><div class="card"><strong>9</strong><span>images read</span></div><div class="card"><strong>4</strong><span>errors</span></div><div class="card"><strong>0</strong><span>warnings</span></div><div class="card"><strong>1</strong><span>cross split duplicate groups</span></div></div>
+<section><h2>Label distribution</h2><p>Labels: [0, 1] · Ignore: []</p><div class="barrow"><span>Class 0</span><div class="track"><div class="bar" style="width:73.84%"></div></div><span>22,672 pixels</span></div><div class="barrow"><span>Class 1</span><div class="track"><div class="bar" style="width:26.16%"></div></div><span>8,032 pixels</span></div>
+<p class="muted">Counts include every readable index mask, including unpaired and mismatched masks. Ignored and unknown pixels are excluded from these bars.</p></section>
+<section><h2>Findings</h2><div class="scroll"><table><thead><tr><th>Severity</th><th>Check</th><th>Path</th><th>Details</th></tr></thead><tbody><tr><td>error</td><td>unknown_labels</td><td>val/sample_0</td><td>Unexpected label pixel counts: {9: 16}</td></tr><tr><td>error</td><td>size_mismatch</td><td>val/sample_1</td><td>Image is (64, 64); mask is (64, 32)</td></tr><tr><td>error</td><td>missing_mask</td><td>test/sample_2</td><td>Image has no matching PNG mask</td></tr><tr><td>error</td><td>cross_split_duplicate</td><td>train/images/sample_0.png, test/images/sample_0.png</td><td>Identical decoded image pixels detected</td></tr></tbody></table></div></section>
+<p class="muted">Exact duplicates do not establish patient identity. This report cannot rule out near-duplicate images or patient-level leakage. Reports include filenames; review before sharing.</p>
+</main></body></html>

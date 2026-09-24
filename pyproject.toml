@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mask-dataset-audit"
+version = "0.1.0"
+description = "Read-only checks and offline reports for PNG segmentation datasets"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "B-jack7"}]
+dependencies = ["numpy>=1.24", "Pillow>=10.4"]
+
+[project.scripts]
+mask-dataset-audit = "mask_dataset_audit.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/B-jack7/mask-dataset-audit"
+Issues = "https://github.com/B-jack7/mask-dataset-audit/issues"
+
+[tool.setuptools.packages.find]
+include = ["mask_dataset_audit*"]

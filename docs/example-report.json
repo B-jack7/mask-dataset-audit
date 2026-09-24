@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "configuration": {
+    "labels": [
+      0,
+      1
+    ],
+    "ignore": [],
+    "splits": [
+      "train",
+      "val",
+      "test"
+    ],
+    "background": 0
+  },
+  "summary": {
+    "masks_read": 8,
+    "images_read": 9,
+    "errors": 4,
+    "warnings": 0,
+    "cross_split_duplicate_groups": 1
+  },
+  "class_pixels": {
+    "0": 22672,
+    "1": 8032
+  },
+  "ignored_pixels": {},
+  "issues": [
+    {
+      "code": "unknown_labels",
+      "severity": "error",
+      "split": "val",
+      "path": "val/sample_0",
+      "message": "Unexpected label pixel counts: {9: 16}"
+    },
+    {
+      "code": "size_mismatch",
+      "severity": "error",
+      "split": "val",
+      "path": "val/sample_1",
+      "message": "Image is (64, 64); mask is (64, 32)"
+    },
+    {
+      "code": "missing_mask",
+      "severity": "error",
+      "split": "test",
+      "path": "test/sample_2",
+      "message": "Image has no matching PNG mask"
+    },
+    {
+      "code": "cross_split_duplicate",
+      "severity": "error",
+      "split": "multiple",
+      "path": "train/images/sample_0.png, test/images/sample_0.png",
+      "message": "Identical decoded image pixels detected"
+    }
+  ],
+  "duplicates": [
+    {
+      "sha256": "4c7935a338e0f9a9e216837c9e80ec0587794fdcebebd66d4afcf2887b4149f8",
+      "cross_split": true,
+      "files": [
+        {
+          "split": "train",
+          "path": "train/images/sample_0.png"
+        },
+        {
+          "split": "test",
+          "path": "test/images/sample_0.png"
+        }
+      ]
+    }
+  ],
+  "masks": [
+    {
+      "split": "train",
+      "key": "sample_0",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    },
+    {
+      "split": "train",
+      "key": "sample_1",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    },
+    {
+      "split": "train",
+      "key": "sample_2",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    },
+    {
+      "split": "val",
+      "key": "sample_0",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3024,
+        "1": 1056,
+        "9": 16
+      }
+    },
+    {
+      "split": "val",
+      "key": "sample_1",
+      "mask_size": [
+        64,
+        32
+      ],
+      "label_pixels": {
+        "0": 1408,
+        "1": 640
+      }
+    },
+    {
+      "split": "val",
+      "key": "sample_2",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    },
+    {
+      "split": "test",
+      "key": "sample_0",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    },
+    {
+      "split": "test",
+      "key": "sample_1",
+      "mask_size": [
+        64,
+        64
+      ],
+      "label_pixels": {
+        "0": 3040,
+        "1": 1056
+      }
+    }
+  ]
+}
